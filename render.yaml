@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: siyuan
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+
+    envVars:
+      - key: SIYUAN_ACCESS_AUTH_CODE
+        value: 05102003
+      - key: PORT
+        value: 10000
+
+    disk:
+      name: siyuan-data
+      mountPath: /siyuan/workspace
+      sizeGB: 1
